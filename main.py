@@ -28,6 +28,7 @@ class SystemTrayIcon(QtWidgets.QSystemTrayIcon):
 
         self.open_app = dict()
         for i, _mode in enumerate(self.power_plan.full_mode_list):
+            # print(_mode['name'])
             _m_name = _mode['name']
             _m_id = _mode['id']
             __check = "✓" if _mode["isActive"] else " "

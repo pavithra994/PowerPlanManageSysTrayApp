@@ -7,12 +7,13 @@ from PySide2 import QtWidgets, QtGui
 # utils.py
 def get_mode_details(value,flat=True):
     if value.startswith("Power Scheme GUID:"):
-        __value = value.split()
+        __value = value.split(' ',4)
         if flat:
-            return __value[4].strip("()"),__value[3]
-        return {"name":__value[4].strip("()"), "id":__value[3]}
+            return __value[4].strip(" () *"),__value[3]
+        return {"name":__value[4].strip(" () *"), "id":__value[3]}
     else:
         raise ValueError("invalid value input")
+
 
 
 # system.py
